@@ -18,7 +18,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
+import com.google.gson.Gson;
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -68,8 +68,8 @@ public class AopLog {
         UserAgent userAgent = UserAgent.parseUserAgentString(header);
 
         final Log l = Log.builder()
-            .threadId(Long.toString(Thread.currentThread().getId()))
-            .threadName(Thread.currentThread().getName())
+//            .threadId(Long.toString(Thread.currentThread().getId()))
+//            .threadName(Thread.currentThread().getName())
             .ip(getIp(request))
             .url(request.getRequestURL().toString())
             .classMethod(String.format("%s.%s", point.getSignature().getDeclaringTypeName(),
@@ -78,12 +78,13 @@ public class AopLog {
             .requestParams(getNameAndValue(point))
             .result(result)
             .timeCost(System.currentTimeMillis() - startTime)
-            .userAgent(header)
+//            .userAgent(header)
             .browser(userAgent.getBrowser().toString())
             .os(userAgent.getOperatingSystem().toString()).build();
 
-        log.info("Request Log Info : {}", JSONUtil.toJsonStr(l));
-
+        //log.info("Request Log Info : {}", JSONUtil.toJsonStr(l));
+        Gson gson = new Gson();
+        log.info("Request Log Info : {}", gson.toJson(l));
         return result;
     }
 
@@ -151,9 +152,9 @@ public class AopLog {
     @AllArgsConstructor
     static class Log {
         // 线程id
-        private String threadId;
+//        private String threadId;
         // 线程名称
-        private String threadName;
+//        private String threadName;
         // ip
         private String ip;
         // url
@@ -173,6 +174,6 @@ public class AopLog {
         // 浏览器
         private String browser;
         // user-agent
-        private String userAgent;
+//        private String userAgent;
     }
 }

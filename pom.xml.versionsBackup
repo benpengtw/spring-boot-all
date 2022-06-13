@@ -16,7 +16,7 @@
 	</properties>
 	<groupId>com.example</groupId>
 	<artifactId>spring-boot-AIO</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-AIO</name>
 	<description>Demo project for Spring Boot</description>
 	<dependencies>

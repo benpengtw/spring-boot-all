@@ -10,3 +10,9 @@ https://github.com/xkcoding/spring-boot-demo
    ```bash
    $ mvn clean package -Dmaven.test.skip=true
    ```
+
+更新 pom 檔並備份
+
+   ```bash
+   $ mvn versions:set -DnewVersion=<version>
+   ```

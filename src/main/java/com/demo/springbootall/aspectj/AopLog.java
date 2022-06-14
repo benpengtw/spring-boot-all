@@ -42,7 +42,7 @@ public class AopLog {
     /**
      * 切入点
      */
-    @Pointcut("execution(public * com.demo.springbootAIO.controller.*Controller.*(..))")
+    @Pointcut("execution(public * com.demo.springbootall.controller.*Controller.*(..))")
     public void log() {
 
     }

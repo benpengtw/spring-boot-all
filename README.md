@@ -21,3 +21,5 @@ https://github.com/xkcoding/spring-boot-demo
    ```bash
    $ mvn versions:set -DnewVersion=<version>
    ```
+
+aop log 在 test 中無效

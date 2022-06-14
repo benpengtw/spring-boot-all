@@ -11,13 +11,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>8</java.version>
+		<java.version>1.8</java.version>
 		<dockerfile-version>1.4.9</dockerfile-version>
 	</properties>
-	<groupId>com.example</groupId>
-	<artifactId>spring-boot-AIO</artifactId>
+	<groupId>com.demo</groupId>
+	<artifactId>spring-boot-all</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
-	<name>spring-boot-AIO</name>
+	<name>spring-boot-all</name>
 	<description>Demo project for Spring Boot</description>
 	<dependencies>
 		<dependency>
@@ -38,8 +38,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
-			<optional>true</optional>
+			<version>1.18.20</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.hutool</groupId>
@@ -65,7 +64,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-AIO</finalName>
+		<finalName>spring-boot-all</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

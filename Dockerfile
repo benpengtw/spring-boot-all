@@ -7,8 +7,7 @@ VOLUME /tmp
 # 暴露8080端口
 EXPOSE 8080
 
-# 添加变量，如果使用dockerfile-maven-plugin，则会自动替换这里的变量内容
-ARG JAR_FILE=target/demo-docker.jar
+ARG JAR_FILE=target/spring-boot-all.jar
 
 # 往容器中添加jar包
 ADD ${JAR_FILE} app.jar

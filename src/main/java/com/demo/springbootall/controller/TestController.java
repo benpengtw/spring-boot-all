@@ -1,4 +1,4 @@
-package com.demo.springbootAIO.controller;
+package com.demo.springbootall.controller;
 
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;

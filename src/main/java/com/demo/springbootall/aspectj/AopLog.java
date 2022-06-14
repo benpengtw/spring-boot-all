@@ -1,4 +1,4 @@
-package com.demo.springbootAIO.aspectj;
+package com.demo.springbootall.aspectj;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.json.JSONUtil;

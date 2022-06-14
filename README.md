@@ -10,6 +10,11 @@ https://github.com/xkcoding/spring-boot-demo
    ```bash
    $ mvn clean package -Dmaven.test.skip=true
    ```
+運行
+
+   ```bash
+   $ docker run -d -p 9090:8080 spring-boot-all:<version>
+   ```
 
 更新 pom 檔並備份
 

@@ -33,7 +33,7 @@ public class UserMapperTest extends SpringBootAllApplicationTests {
     public void selectAllUser() {
         List<User> userList = userMapper.selectAllUser();
         Assert.assertTrue(CollUtil.isNotEmpty(userList));
-        log.info("【userList】= {}", userList);
+        log.debug("【userList】= {}", userList);
     }
 
     /**

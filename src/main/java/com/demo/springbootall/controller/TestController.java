@@ -3,10 +3,17 @@ package com.demo.springbootall.controller;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.json.JSONUtil;
 import com.demo.springbootall.dto.DownloadReq;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +30,8 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RestController
 public class TestController {
-
+    private static final String SERVER_ACCOUNT_EMAIL = "allpay-pass@appspot.gserviceaccount.com";
+    private static final String BUCKET_NAME = "allpay-pass.appspot.com";
     /**
      * 测试方法
      *
@@ -42,13 +50,11 @@ public class TestController {
 
     @RequestMapping(value = "/download", method = RequestMethod.POST)
     @ResponseBody
-    public URL GenerateV4GetObjectSignedUrl(
-            @RequestBody DownloadReq req) throws StorageException {
-        // String projectId = "my-project-id";
-        // String bucketName = "my-bucket";
-        // String objectName = "my-object";
+    public URL GenerateV4GetObjectSignedUrl(@RequestBody DownloadReq req) throws StorageException, IOException {
+        File file = ResourceUtils.getFile("classpath:allpay-pass-credential.json");
+        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream (file));
         log.info(String.valueOf (req));
-        Storage storage = StorageOptions.newBuilder().setProjectId(req.getProjectId ()).build().getService();
+        Storage storage = StorageOptions.newBuilder().setCredentials(credentials).setProjectId(req.getProjectId ()).build().getService();
 
         // Define resource
         BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(req.getBucketName (), req.getObjectName ())).build();

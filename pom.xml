@@ -13,6 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<dockerfile-version>1.4.9</dockerfile-version>
+		<cloud-api-client.version>1.33.0</cloud-api-client.version>
         <cloud-storage.version>2.8.1</cloud-storage.version>
 	</properties>
 	<groupId>com.demo</groupId>
@@ -62,6 +63,11 @@
 			<artifactId>google-cloud-storage</artifactId>
 			<version>${cloud-storage.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>${cloud-api-client.version}</version>
+		</dependency>
 		<!-- 解析 UserAgent 信息 -->
 		<dependency>
 			<groupId>eu.bitwalker</groupId>
@@ -92,6 +98,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.7.1</version>
 			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>

@@ -33,4 +33,4 @@ mybatis:
     # 下划线转驼峰
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mappers/*.xml
-  type-aliases-package: com.xkcoding.orm.mybatis.entity
+  type-aliases-package: com.demo.springbootall.entity

@@ -23,3 +23,5 @@ https://github.com/xkcoding/spring-boot-demo
    ```
 
 aop log 在 test 中無效
+
+![](document/img/1657620257569.jpg)
